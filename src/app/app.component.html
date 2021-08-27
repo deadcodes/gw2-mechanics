@@ -14,19 +14,23 @@
         </ngx-dropzone>
       </td>
       <td>
-        <div style="margin:8px;" *ngIf="bosses.length != 0">Bosses: <p-dropdown [(options)]="bosses" [(ngModel)]="selectedBoss"
-            (onChange)="plotChart()"></p-dropdown>
+        <div style="margin:8px;" *ngIf="bosses.length != 0">Bosses: <p-dropdown [(options)]="bosses"
+            [(ngModel)]="selectedBoss" (onChange)="plotChart()"></p-dropdown>
         </div>
         <div *ngIf="bosses.length != 0" style="display: inline-flex;margin: 8px;">
           <span style="padding: 8px 8px 0 0;" *ngIf="!hideAll">Hide All</span>
           <span style="padding: 8px 8px 0 0;" *ngIf="hideAll"> Show All </span>
-          <span><p-inputSwitch [(ngModel)]="hideAll" (onChange)="toggleVisibility($event)"></p-inputSwitch></span>
+          <span>
+            <p-inputSwitch [(ngModel)]="hideAll" (onChange)="toggleVisibility($event)"></p-inputSwitch>
+          </span>
         </div>
       </td>
     </tr>
   </div>
   <div class="grid-child right">
     <div *ngIf="selectedBoss">
-      <p-chart id = myChart type="radar" [data]="data" [options]="options"></p-chart>
+      <canvas id=myChart baseChart [datasets]="radarChartData" [options]="radarChartOptions" [labels]="radarChartLabels"
+        [chartType]="radarChartType">
+      </canvas>
     </div>
     <router-outlet></router-outlet>
