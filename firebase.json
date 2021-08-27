@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/mechanics-chart",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

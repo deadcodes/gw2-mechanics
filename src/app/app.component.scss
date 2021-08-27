@@ -1,0 +1,15 @@
+.dropzone {
+    min-height: 180px;
+    min-width: 204px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 20vw 75vw;
+    grid-gap: 20px;
+}
+
+body, h1, h2, h3, h4, h5, h6, *  {
+    font-family: "Roboto", Arial, sans-serif;
+    color: #495057;
+  }
